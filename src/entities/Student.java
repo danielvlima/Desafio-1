@@ -1,12 +1,13 @@
 package entities;
 
 public class Student {
-	private int enrollment;
+	private Integer enrollment;
 	private String name;
 	private String telephone;
 	private String email;
 	private String uffmail;
 	private String status;
+	private String firstName;
 	
 	public Student(int enrollment, String name, String telephone, String email, String uffmail, String status) {
 		this.enrollment = enrollment;
@@ -17,7 +18,7 @@ public class Student {
 		this.status = status;
 	}
 
-	public int getEnrollment() {
+	public Integer getEnrollment() {
 		return enrollment;
 	}
 
@@ -65,5 +66,10 @@ public class Student {
 		this.status = status;
 	}
 	
+	public String getFirstName() {
+		String [] vect = name.split(" ");
+		firstName = vect[0];
+		return firstName;
+	}
 	
 }
