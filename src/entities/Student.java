@@ -66,10 +66,9 @@ public class Student {
 		this.status = status;
 	}
 	
-	public String getFirstName() {
+	public String[] getArrayName() {
 		String [] vect = name.split(" ");
-		firstName = vect[0];
-		return firstName;
+		return vect;
 	}
 	
 }
