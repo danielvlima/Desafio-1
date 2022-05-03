@@ -22,17 +22,19 @@ public class Program {
 		enrollment = read.nextInt();
 		
 		Student student = handleCSV.getStudentByEnrollment(enrollment);
-			
-		if (student != null) {	
+		
+		if (student != null && student.getUffmail() == "") {	
 			String firstName = student.getArrayName()[0];
 			
 			System.out.println( firstName + ", por favor escolha uma das opções abaixo para o seu UFFmail");
 		
-			String[] emails = EmailGenerator.getUffmailSuggestions(student);
+			String[] uffmailsArray = EmailGenerator.getUffmailSuggestions(student);
 			
-			for (int i = 0; i < emails.length; i++ ) {
-				System.out.println(i+1 + " - " + emails[i]);
+			for (int i = 0; i < uffmailsArray.length; i++ ) {
+				System.out.println(i+1 + " - " + uffmailsArray[i]);
 			}
+		} else if (student.getUffmail() != ""){
+			System.out.println("Aluno já possui um email da UFF: " + student.getUffmail());
 		} else {
 			System.out.println("Matrícula não encontrada.");
 		}
