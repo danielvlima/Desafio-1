@@ -1,13 +1,15 @@
 package entities;
 
+import util.HandleCSV;
+
 public class Student {
-	private Integer enrollment;
+	private int enrollment;
 	private String name;
 	private String telephone;
 	private String email;
 	private String uffmail;
 	private String status;
-	private String firstName;
+
 	
 	public Student(int enrollment, String name, String telephone, String email, String uffmail, String status) {
 		this.enrollment = enrollment;
@@ -56,6 +58,7 @@ public class Student {
 
 	public void setUffmail(String uffmail) {
 		this.uffmail = uffmail;
+	
 	}
 
 	public String getStatus() {
